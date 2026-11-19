@@ -1,0 +1,7 @@
+# Lokala inställningar med lösenord och nycklar – checkas aldrig in
+config.php
+*/config.php
+
+# Systemfiler
+.DS_Store
+Thumbs.db
