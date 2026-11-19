@@ -1,0 +1,8 @@
+# Kollen kärnpaket – blockera direktåtkomst till allt utom CSS
+# Variant: GEMENSAM
+<IfModule mod_authz_core.c>
+  Require all denied
+  <FilesMatch "\.css$">
+    Require all granted
+  </FilesMatch>
+</IfModule>
