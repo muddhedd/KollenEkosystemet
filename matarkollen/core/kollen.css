@@ -1,0 +1,95 @@
+/* Kollen kärnpaket – kollen.css
+   Variant: GEMENSAM
+   DOS-inspirerad, minimalistisk design för hela ekosystemet. */
+
+:root {
+  --kc-bg: #f7f6f1;
+  --kc-yta: #ffffff;
+  --kc-text: #111111;
+  --kc-dampad: #666666;
+  --kc-lank: #c00000;
+  --kc-lank-hover: #800000;
+  --kc-ram: #111111;
+  --kc-linje: #d6d4cc;
+  --kc-hover: #f1efe7;
+  --kc-ok: #1d6b2a;   --kc-ok-bg: #e8f3e9;
+  --kc-fel: #a40000;  --kc-fel-bg: #fbeaea;
+  --kc-info: #1f3a66; --kc-info-bg: #eef0f5;
+  --kc-radie: 8px;
+  --kc-font: "Cascadia Mono", Consolas, "DejaVu Sans Mono", Menlo, "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+html { font-size: 15px; }
+body { margin: 0; background: var(--kc-bg); color: var(--kc-text); font-family: var(--kc-font); line-height: 1.5; }
+
+a { color: var(--kc-lank); text-decoration: none; }
+a:hover { color: var(--kc-lank-hover); text-decoration: underline; }
+
+h1 { font-size: 1.4rem; margin: 0 0 1rem; }
+h2 { font-size: 1.15rem; margin: 1.5rem 0 .75rem; }
+p  { margin: 0 0 .75rem; }
+
+/* Sidhuvud */
+.kc-huvud { background: var(--kc-yta); border-bottom: 2px solid var(--kc-ram); }
+.kc-huvud-inre { max-width: 1200px; margin: 0 auto; padding: .6rem 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; }
+.kc-logo { font-weight: 700; font-size: 1.15rem; color: var(--kc-text); }
+.kc-logo:hover { color: var(--kc-text); }
+.kc-etikett { border: 1px solid var(--kc-ram); border-radius: 4px; padding: 0 .4rem; font-size: .75rem; }
+.kc-meny { display: flex; flex-wrap: wrap; gap: .25rem 1rem; flex: 1; }
+.kc-meny a.aktiv { color: var(--kc-text); font-weight: 700; border-bottom: 2px solid var(--kc-lank); }
+.kc-anvandare { display: flex; align-items: center; gap: .6rem; font-size: .9rem; color: var(--kc-dampad); }
+
+/* Innehåll */
+.kc-innehall { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.kc-ruta { background: var(--kc-yta); border: 2px solid var(--kc-ram); border-radius: var(--kc-radie); padding: 1rem 1.25rem; margin: 0 0 1rem; }
+.kc-ruta > h2:first-child { margin-top: 0; }
+
+/* Meddelanden */
+.kc-flash { border: 2px solid; border-radius: var(--kc-radie); padding: .6rem 1rem; margin: 0 0 1rem; }
+.kc-flash-ok   { color: var(--kc-ok);   background: var(--kc-ok-bg);   border-color: var(--kc-ok); }
+.kc-flash-fel  { color: var(--kc-fel);  background: var(--kc-fel-bg);  border-color: var(--kc-fel); }
+.kc-flash-info { color: var(--kc-info); background: var(--kc-info-bg); border-color: var(--kc-info); }
+
+/* Formulär */
+.kc-falt { margin: 0 0 .9rem; }
+.kc-falt label { display: block; font-weight: 700; margin-bottom: .2rem; }
+.kc-hjalp { font-size: .85rem; color: var(--kc-dampad); }
+input, select, textarea { font: inherit; color: inherit; background: #fff; padding: .4rem .5rem; border: 1px solid var(--kc-ram); border-radius: 6px; max-width: 100%; }
+input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible { outline: 2px solid var(--kc-lank); outline-offset: 1px; }
+input[type="checkbox"], input[type="radio"] { padding: 0; }
+.kc-inline { display: inline; margin: 0; }
+
+button, .kc-knapp { display: inline-block; font: inherit; padding: .4rem .9rem; border: 2px solid var(--kc-ram); border-radius: 6px; background: var(--kc-yta); color: var(--kc-text); cursor: pointer; }
+button:hover, .kc-knapp:hover { background: var(--kc-text); color: var(--kc-yta); text-decoration: none; }
+.kc-knapp-primar { background: var(--kc-text); color: var(--kc-yta); }
+.kc-knapp-primar:hover { background: var(--kc-lank); border-color: var(--kc-lank); }
+.kc-knapp-fara { border-color: var(--kc-fel); color: var(--kc-fel); }
+.kc-knapp-fara:hover { background: var(--kc-fel); color: #fff; }
+.kc-lank-knapp, .kc-lank-knapp:hover { border: 0; background: none; padding: 0; color: var(--kc-lank); }
+.kc-lank-knapp:hover { text-decoration: underline; }
+
+/* Listor */
+.kc-filter { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 .75rem; }
+.kc-lista-antal { margin-left: auto; color: var(--kc-dampad); font-size: .9rem; }
+.kc-tabell-wrap { overflow-x: auto; background: var(--kc-yta); border: 2px solid var(--kc-ram); border-radius: var(--kc-radie); }
+.kc-tabell { width: 100%; border-collapse: collapse; }
+.kc-tabell th, .kc-tabell td { padding: .45rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--kc-linje); }
+.kc-tabell th { white-space: nowrap; border-bottom: 2px solid var(--kc-ram); }
+.kc-tabell th a { color: var(--kc-text); }
+.kc-tabell th a.sorterad { text-decoration: underline; }
+.kc-tabell tbody tr:hover { background: var(--kc-hover); }
+.kc-tabell tbody tr:last-child td { border-bottom: 0; }
+.kc-tom { color: var(--kc-dampad); font-style: italic; }
+
+.kc-sidor { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .75rem; }
+.kc-sidor a, .kc-sidor span { padding: .1rem .55rem; border: 1px solid var(--kc-ram); border-radius: 4px; }
+.kc-sidor .aktiv { background: var(--kc-text); color: var(--kc-yta); }
+.kc-sidor .lucka { border-color: transparent; }
+
+/* Övrigt */
+code, .kc-kod { background: #efede5; padding: .1rem .3rem; border-radius: 4px; }
+.kc-nyckel { word-break: break-all; }
+.kc-dampad { color: var(--kc-dampad); }
+
+.kc-fot { max-width: 1200px; margin: 0 auto; padding: 1rem; border-top: 1px solid var(--kc-linje); font-size: .8rem; color: var(--kc-dampad); }
