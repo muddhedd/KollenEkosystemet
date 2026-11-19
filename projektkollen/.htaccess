@@ -1,0 +1,6 @@
+# ProjektKollen – spärra konfiguration
+<IfModule mod_authz_core.c>
+  <FilesMatch "^config(\.example)?\.php$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
